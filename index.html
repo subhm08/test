@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .content{
+        background-color: black;
+        padding: 12px;
+    }
+    iframe{
+        background-color: aqua;
+        height: 100vh;
+    }
+</style>
+<body>
+    <div class="content">
+        <form id="frm" target="frame" action="">
+            <input id="input" type="text">
+            <button type="submit" onclick="search()">search</button>
+        </form>
+    </div>
+    <div id="result">
+        <iframe name="frame" width="100%" height='100vh' frameborder="0"></iframe>
+    </div>
+</body>
+<script>
+    function search() {
+        var res = document.getElementById("input").value
+        var url= res+'.html'
+        document.getElementById("frm").setAttribute("action", url)
+    }
+</script>
+
+</html>
